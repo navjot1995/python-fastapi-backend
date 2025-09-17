@@ -81,10 +81,10 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 - Health check: http://localhost:8000/health
 
 ## 📊 API Endpoints
-- Health Check
+### Health Check
 GET /health - Check API status and Python version
 
-- Users
+### Users
 POST /users/ - Create a new user (JSON body)
 
 POST /users/query/ - Create a new user (query parameters)
@@ -93,7 +93,7 @@ GET /users/ - Get all users
 
 GET /users/{user_id} - Get user by ID
 
-- Products
+### Products
 POST /products/ - Create a new product (JSON body)
 
 POST /products/query/ - Create a new product (query parameters)
