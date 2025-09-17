@@ -1,0 +1,38 @@
+# Create project directory
+mkdir my-api-backend
+cd my-api-backend
+
+# Create virtual environment
+python3 -m venv venv
+
+
+# Make sure you're in the virtual environment
+source venv/bin/activate
+
+Install Required Packages
+
+pip install fastapi uvicorn sqlalchemy python-jose[cryptography] passlib[bcrypt] python-multipart
+
+Create Project Structure
+
+touch main.py models.py schemas.py database.py crud.py requirements.txt
+
+# Make sure you're in the virtual environment
+source venv/bin/activate
+
+# Run the API
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+
+
+
+# Health check
+curl http://localhost:8000/health
+
+# Create a user
+curl -X POST "http://localhost:8000/users/?name=John%20Doe&email=john@example.com"
+
+# Get all users
+curl http://localhost:8000/users/
+
+# Create an item
+curl -X POST "http://localhost:8000/items/?name=Test%20Item&description=This%20is%20a%20test"
